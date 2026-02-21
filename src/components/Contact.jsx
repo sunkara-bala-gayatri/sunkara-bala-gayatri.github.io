@@ -34,10 +34,7 @@ const Contact = () => {
                                     <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-all mr-6">
                                         <Phone size={24} />
                                     </div>
-                                    <div>
-                                        <div className="text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Call Me</div>
-                                        <div className="text-lg font-medium">+91 95507 28493</div>
-                                    </div>
+                                   
                                 </a>
                             </div>
 
