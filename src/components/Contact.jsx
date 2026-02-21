@@ -8,13 +8,13 @@ const Contact = () => {
             {/* Background decoration */}
             <div className="absolute top-1/2 left-1/2 -z-10 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
 
-            <div className="container mx-auto px-6">
-                <div className="max-w-5xl mx-auto glass rounded-[3rem] p-8 md:p-16 border border-primary-500/10">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="max-w-5xl mx-auto glass rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 border border-primary-500/10">
                     <div className="grid md:grid-cols-2 gap-16">
                         <div>
-                            <h2 className="text-4xl font-outfit font-extrabold mb-6 leading-tight">
-                                Let's Build Something <br />
-                                <span className="bg-gradient-to-r from-primary-500 to-accent bg-clip-text text-transparent">Amazing</span> Together.
+                            <h2 className="text-3xl md:text-4xl font-outfit font-extrabold mb-6 leading-tight">
+                                Let's Build Something <br className="hidden md:block" />
+                                <span className="bg-gradient-to-r from-primary-500 to-accent bg-clip-text text-transparent"> Amazing</span> Together.
                             </h2>
                             <p className="text-slate-600 dark:text-slate-400 text-lg mb-10">
                                 I'm currently seeking internship opportunities and entry-level developer roles. Whether you have a question or just want to say hi, my inbox is always open!
@@ -22,23 +22,18 @@ const Contact = () => {
 
                             <div className="space-y-6 mb-12">
                                 <a href="mailto:sunkarabalagayatri@gmail.com" className="flex items-center group">
-                                    <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-all mr-6">
+                                    <div className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-slate-100 dark:bg-slate-800 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-all mr-4 md:mr-6 shrink-0">
                                         <Mail size={24} />
                                     </div>
-                                    <div>
-                                        <div className="text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Email Me</div>
-                                        <div className="text-lg font-medium">sunkarabalagayatri@gmail.com</div>
+                                    <div className="min-w-0">
+                                        <div className="text-xs md:text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Email Me</div>
+                                        <div className="text-base md:text-lg font-medium break-all md:break-normal">sunkarabalagayatri@gmail.com</div>
                                     </div>
                                 </a>
-                                <a href="tel:+919550728493" className="flex items-center group">
-                                    <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-all mr-6">
-                                        <Phone size={24} />
-                                    </div>
-                                   
-                                </a>
+
                             </div>
 
-                            <div className="flex gap-4">
+                            <div className="flex gap-3 md:gap-4">
                                 {[
                                     { icon: <Github size={20} />, href: "https://github.com/sunkara-bala-gayatri" },
                                     { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/sunkara-bala-gayatri-5865493b2" },
@@ -48,7 +43,7 @@ const Contact = () => {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-all border border-transparent hover:border-primary-500/20"
+                                        className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-all border border-transparent hover:border-primary-500/20"
                                     >
                                         {social.icon}
                                     </a>
@@ -56,7 +51,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white dark:bg-slate-800/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+                        <div className="bg-white dark:bg-slate-800/50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 dark:border-slate-800">
                             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
