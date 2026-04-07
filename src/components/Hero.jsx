@@ -65,10 +65,10 @@ const Hero = () => {
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
                     <a
-                        href="#projects"
+                        href="#experience"
                         className="group px-8 py-4 rounded-2xl bg-primary-500 text-white font-bold flex items-center hover:bg-primary-600 transition-all shadow-xl shadow-primary-500/25"
                     >
-                        View My Work
+                        View My Experience
                         <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                     </a>
                     <a
