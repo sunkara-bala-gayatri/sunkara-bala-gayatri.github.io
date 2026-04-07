@@ -7,7 +7,7 @@ const Skills = () => {
         {
             title: "Programming",
             icon: <Terminal className="text-primary-500" size={24} />,
-            skills: ["C", "Java", "Python"],
+            skills: ["C", "Java", "Python","React","nextjs",],
             color: "from-blue-500 to-cyan-500"
         },
         {
@@ -19,13 +19,13 @@ const Skills = () => {
         {
             title: "Databases",
             icon: <Database className="text-primary-400" size={24} />,
-            skills: ["MySQL", "SQL"],
+            skills: ["MySQL", "SQL","mongoDB"],
             color: "from-indigo-400 to-blue-600"
         },
         {
             title: "Tools & Others",
             icon: <GitBranch className="text-accent" size={24} />,
-            skills: ["Git", "XAMPP"],
+            skills: ["Git", "XAMPP","npm","yarn","vscode","github","word press",""],
             color: "from-violet-500 to-fuchsia-500"
         }
     ];

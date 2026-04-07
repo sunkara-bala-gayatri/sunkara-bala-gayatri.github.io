@@ -3,10 +3,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
 import Experience from './components/Experience';
 import BlogSection from './components/BlogSection';
-import GitHubSection from './components/GitHubSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
@@ -16,7 +14,7 @@ import { RefreshCw, Clock } from 'lucide-react';
 
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(true);
-    const { profile, repos, blogs, experience, loading, refresh, lastUpdated } = usePortfolioData();
+    const { blogs, experience, loading, refresh, lastUpdated } = usePortfolioData();
 
     useEffect(() => {
         if (isDarkMode) {
@@ -56,9 +54,7 @@ function App() {
                 <Reveal width="100%"><About /></Reveal>
                 <Reveal width="100%"><Skills /></Reveal>
                 <Reveal width="100%"><Experience items={experience} loading={loading} /></Reveal>
-                <Reveal width="100%"><Projects repos={repos} loading={loading} /></Reveal>
                 <Reveal width="100%"><BlogSection blogs={blogs} loading={loading} /></Reveal>
-                <Reveal width="100%"><GitHubSection user={profile} repos={repos} loading={loading} /></Reveal>
                 <Reveal width="100%"><Contact /></Reveal>
             </main>
             <Footer />

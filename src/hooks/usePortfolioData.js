@@ -1,16 +1,13 @@
 import { useState, useEffect } from 'react';
 
-const GH_USERNAME = 'sunkara-bala-gayatri';
 const BLOG_RSS_URL = 'https://dev.to/feed/sunkarabalagayatri'; // Placeholder - user can update
 const GIST_ID = ''; // Placeholder for LinkedIn-style JSON data
 
-const CACHE_KEY = 'portfolio_data_cache';
+const CACHE_KEY = 'portfolio_data_cache_v2'; // Changed cache key to invalidate old data
 const CACHE_TTL = 1000 * 60 * 60; // 1 hour
 
 export const usePortfolioData = () => {
     const [data, setData] = useState({
-        profile: null,
-        repos: [],
         blogs: [],
         experience: [],
         loading: true,
@@ -34,21 +31,25 @@ export const usePortfolioData = () => {
         }
 
         try {
-            const [userRes, reposRes, blogsRes] = await Promise.all([
-                fetch(`https://api.github.com/users/${GH_USERNAME}`),
-                fetch(`https://api.github.com/users/${GH_USERNAME}/repos?sort=updated&per_page=10`),
+            const [blogsRes] = await Promise.all([
                 // Using a public RSS-to-JSON proxy for demo purposes
                 fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(BLOG_RSS_URL)}`).catch(() => null)
             ]);
 
-            const profile = await userRes.json();
-            const repos = await reposRes.json();
             const blogsData = blogsRes ? await blogsRes.json() : { items: [] };
 
             // Manual Experience Data (Fallback for LinkedIn Sync)
             const experience = [
                 {
                     id: 1,
+                    role: "Web Development Intern",
+                    company: "Phantasm Solutions",
+                    period: "November 26, 2025 – Present",
+                    description: "Working as a Web Development Intern involved in building and maintaining web applications. Contributing to frontend development using modern web technologies, improving UI components, and collaborating with the development team on real-world projects.",
+                    type: "Experience"
+                },
+                {
+                    id: 2,
                     role: "Diploma in CSE",
                     company: "Dhanekula Institute of Technology",
                     period: "2023 - 2026",
@@ -56,7 +57,7 @@ export const usePortfolioData = () => {
                     type: "Education"
                 },
                 {
-                    id: 2,
+                    id: 3,
                     role: "Candidate",
                     company: "Vijayawada",
                     period: "2024",
@@ -66,9 +67,7 @@ export const usePortfolioData = () => {
             ];
 
             const newPayload = {
-                profile,
-                repos: repos.filter(r => !r.fork),
-                blogs: blogsData.items || [],
+                blogs: blogsData && blogsData.items ? blogsData.items : [],
                 experience,
                 loading: false,
                 error: null,
